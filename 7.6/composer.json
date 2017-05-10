@@ -1,0 +1,36 @@
+{
+    "name": "derhofbauer/typo3-composer",
+    "description": "A docker image for running TYPO3 in Composer mode",
+    "type": "docker-image",
+    "homepage": "https://github.com/derhofbauer/typo3-composer",
+    "license": ["GPL-2.0+"],
+    "keywords": ["TYPO3 CMS, TYPO3 Console, Docker Image"],
+    "version": "1.0.0",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.typo3.org/"
+        }
+    ],
+    "require": {
+        "typo3/cms": "^7.6.18"
+    },
+    "require-dev": {
+        "helhum/typo3-console": "^4.4"
+    },
+    "authors": [
+        {
+            "name": "Alexander Hofbauer",
+            "email": "hofbauer.alexander@gmail.com"
+        }
+    ],
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": "web"
+        },
+        "helhum/typo3-console": {
+            "install-extension-dummy": false
+        }
+    }
+}
