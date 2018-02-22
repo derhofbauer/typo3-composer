@@ -46,7 +46,8 @@ RUN composer install && \
     chown www-data:www-data -R /var/www && \
     $TYPO3CMS_PATH install:fixfolderstructure && \
     $TYPO3CMS_PATH install:generatepackagestates && \
-    mv composer.json composer.docker.json
+    mv composer.json composer.docker.json && \
+    mv composer.lock composer.docker.lock
 
 VOLUME /var/www/html/web/fileadmin
 VOLUME /var/www/html/web/typo3conf
