@@ -43,12 +43,12 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY composer.json /var/www/html
 
 RUN composer install && \
-    chown www-data:www-data -R /var/www && \
     $TYPO3CMS_PATH install:fixfolderstructure && \
     $TYPO3CMS_PATH install:generatepackagestates && \
     mv composer.json composer.docker.json && \
     mv composer.lock composer.docker.lock && \
     cp vendor/typo3/cms/_.htaccess web/.htaccess && \
+    chown www-data:www-data -R /var/www && \
     chmod 777 /var/www/html/web -R
 
 VOLUME /var/www/html/web/fileadmin
