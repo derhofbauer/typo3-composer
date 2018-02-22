@@ -48,7 +48,7 @@ RUN composer install && \
     $TYPO3CMS_PATH install:generatepackagestates && \
     mv composer.json composer.docker.json
 
-VOLUME /var/www/html/fileadmin
-VOLUME /var/www/html/typo3conf
-VOLUME /var/www/html/typo3temp
-VOLUME /var/www/html/uploads
+VOLUME /var/www/html/web/fileadmin
+VOLUME /var/www/html/web/typo3conf
+VOLUME /var/www/html/web/typo3temp
+VOLUME /var/www/html/web/uploads
