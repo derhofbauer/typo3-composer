@@ -47,7 +47,8 @@ RUN composer install && \
     $TYPO3CMS_PATH install:fixfolderstructure && \
     $TYPO3CMS_PATH install:generatepackagestates && \
     mv composer.json composer.docker.json && \
-    mv composer.lock composer.docker.lock
+    mv composer.lock composer.docker.lock && \
+    cp vendor/typo3/cms/_.htaccess web/.htaccess
 
 VOLUME /var/www/html/web/fileadmin
 VOLUME /var/www/html/web/typo3conf
