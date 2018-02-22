@@ -16,6 +16,7 @@ RUN apt-get update && \
         libpng-dev libxpm-dev \
         libxml2-dev \
         graphicsmagick \
+        mysql-client \
         tar \
 ##### Composer
         wget curl git-core subversion mercurial && \
