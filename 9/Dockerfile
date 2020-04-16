@@ -42,10 +42,10 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN composer create-project typo3/cms-base-distribution typo3
 
 ###### Create Volumes
-VOLUME /var/www/html/typo3/fileadmin
-VOLUME /var/www/html/typo3/typo3conf
-VOLUME /var/www/html/typo3/typo3temp
-VOLUME /var/www/html/typo3/uploads
+VOLUME /var/www/html/typo3/public/fileadmin
+VOLUME /var/www/html/typo3/public/typo3conf
+VOLUME /var/www/html/typo3/public/typo3temp
+VOLUME /var/www/html/typo3/public/uploads
 
 ###### Set Workdir
 WORKDIR /var/www/html/typo3
