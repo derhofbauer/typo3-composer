@@ -13,7 +13,8 @@
         }
     ],
     "require": {
-        "typo3/cms": "9.*"
+        "typo3/cms": "^9.5.0",
+        "typo3/cms-scheduler": "^9.5.0"
     },
     "require-dev": {
         "helhum/typo3-console": "^5.8.4"

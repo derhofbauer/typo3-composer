@@ -1,4 +1,4 @@
-FROM php:7-apache
+FROM php:7.2-apache
 MAINTAINER Alexander Hofbauer <hofbauer.alexander@gmail.com>
 
 ENV TYPO3CMS_PATH 'vendor/bin/typo3cms'
@@ -8,20 +8,20 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
 ##### TYPO3
-        libxml2-dev libfreetype6-dev \
-        libjpeg62-turbo-dev libjpeg-dev \
-        libmcrypt-dev \
-        zlib1g-dev \
-        zip zlib1g-dev libzip-dev \
-        libpng-dev libxpm-dev \
-        libxml2-dev \
-        graphicsmagick \
-        mysql-client \
-        tar \
+    libxml2-dev libfreetype6-dev \
+    libjpeg62-turbo-dev libjpeg-dev \
+    libmcrypt-dev \
+    zlib1g-dev \
+    zip zlib1g-dev libzip-dev \
+    libpng-dev libxpm-dev \
+    libxml2-dev \
+    graphicsmagick \
+    mysql-client \
+    tar \
 ##### Composer
-        wget curl git-core subversion mercurial && \
+    wget curl git-core subversion mercurial
 ##### add PHP packages
-    docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
+RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ && \
     docker-php-ext-install -j$(nproc) mysqli soap gd zip opcache && \
     echo 'always_populate_raw_post_data = -1\nmax_execution_time = 240\nmax_input_vars = 1500\nupload_max_filesize = 32M\npost_max_size = 32M' > /usr/local/etc/php/conf.d/typo3.ini && \
 #### configure Apache
