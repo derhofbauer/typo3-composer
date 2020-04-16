@@ -1,7 +1,7 @@
 FROM php:7.2-apache
 MAINTAINER Alexander Hofbauer <hofbauer.alexander@gmail.com>
 
-ENV TYPO3CMS_PATH 'vendor/bin/typo3cms'
+ENV TYPO3CMS_PATH '/var/www/html/typo3/vendor/bin/typo3cms'
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # Install TYPO3 & Composer
