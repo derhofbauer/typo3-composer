@@ -39,7 +39,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 ###### Install TYPO3 using Composer
-RUN composer create-project typo3/cms-base-distribution typo3
+RUN composer create-project typo3/cms-base-distribution typo3 "9.*"
 
 ###### Create Volumes
 VOLUME /var/www/html/typo3/public/fileadmin
