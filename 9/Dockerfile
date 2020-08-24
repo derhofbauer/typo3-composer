@@ -12,7 +12,7 @@ RUN apt-get update && \
     libjpeg62-turbo-dev libjpeg-dev \
     libmcrypt-dev \
     zlib1g-dev \
-    zip zlib1g-dev libzip-dev \
+    zip unzip zlib1g-dev libzip-dev \
     libpng-dev libxpm-dev \
     libxml2-dev \
     graphicsmagick \
